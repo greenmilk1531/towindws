@@ -1,10 +1,7 @@
 name: Build Electron App
 
 # 태그 푸시할 때만 빌드
-on:
-  push:
-    tags:
-      - "v*"
+
 
 jobs:
   build-windows:
