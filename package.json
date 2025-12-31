@@ -31,6 +31,7 @@
     "mac": {
       "target": "dmg",
       "icon": "arma.icns"
-    }
+    },
+    "publish": null
   }
 }
