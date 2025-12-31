@@ -1,5 +1,6 @@
 name: Build Electron App
 
+# 태그 푸시할 때만 빌드
 on:
   push:
     tags:
@@ -10,20 +11,25 @@ jobs:
     runs-on: windows-latest
 
     steps:
+      # 1️⃣ 소스코드 가져오기
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      # 2️⃣ Node.js 설치
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 20
 
+      # 3️⃣ 의존성 설치
       - name: Install dependencies
         run: npm install
 
+      # 4️⃣ Windows exe 빌드
       - name: Build Windows exe
         run: npm run dist:win
 
+      # 5️⃣ 빌드 결과 업로드
       - name: Upload exe artifact
         uses: actions/upload-artifact@v4
         with:
