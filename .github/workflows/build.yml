@@ -1,8 +1,10 @@
 name: Build Electron App
 
 # 태그 푸시할 때만 빌드
-
-
+on:
+  push:
+    branches:
+      - main
 jobs:
   build-windows:
     runs-on: windows-latest
