@@ -1,0 +1,36 @@
+{
+  "name": "electron",
+  "version": "1.0.0",
+  "description": "Arma Monitor Electron App",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder build",
+    "dist:win": "npm run dist -- -w",
+    "dist:mac": "npm run dist -- -m"
+  },
+  "keywords": [],
+  "author": "greenmilk",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {},
+  "devDependencies": {
+    "electron": "^39.2.7",
+    "electron-builder": "^26.0.12"
+  },
+  "build": {
+    "appId": "com.greenmilk.arma",
+    "productName": "Arma Monitor",
+    "files": [
+      "**/*"
+    ],
+    "win": {
+      "target": "nsis",
+      "icon": "arma.ico"
+    },
+    "mac": {
+      "target": "dmg",
+      "icon": "arma.icns"
+    }
+  }
+}
